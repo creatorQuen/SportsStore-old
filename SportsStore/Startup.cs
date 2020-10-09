@@ -17,6 +17,7 @@ namespace SportsStore
         {
             services.AddTransient<IProductRepository, FakeProductRepository>();
             services.AddControllersWithViews();
+            services.AddMvc();
         }
 
 
@@ -31,6 +32,12 @@ namespace SportsStore
             {
                 endpoints.MapDefaultControllerRoute();
             });
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Product}/{action=List}/{id}");
+            //});
         }
     }
 }
